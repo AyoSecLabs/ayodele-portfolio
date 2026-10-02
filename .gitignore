@@ -1,0 +1,14 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Node.js files, useful if the site grows later
+node_modules/
+.next/
+dist/
+out/
+
+# System/editor files
+.DS_Store
+.vscode/

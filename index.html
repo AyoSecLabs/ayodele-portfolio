@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayodele Olabanji — Cybersecurity Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff;
+      --off: #f5f5f7;
+      --off2: #e8e8ed;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --faint: #86868b;
+      --line: rgba(0,0,0,0.08);
+      --max: 980px;
+    }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.52941;
+      letter-spacing: -0.022em;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--line);
+      height: 52px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-inner {
+      width: min(100%, var(--max));
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 22px;
+    }
+    .nav-name { font-family: 'Playfair Display', Georgia, serif; font-size: 1.22rem; font-style: italic; font-weight: 400; letter-spacing: 0.01em; color: var(--text); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: 0.84rem; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── SECTIONS ── */
+    section { padding: 88px 22px; }
+    .inner { width: min(100%, var(--max)); margin: 0 auto; }
+
+    /* ── HERO ── */
+    .hero { padding: 120px 22px 80px; text-align: center; background: var(--white); }
+    .hero-inner { max-width: 660px; margin: 0 auto; }
+    .hero-label {
+      display: inline-block;
+      font-size: 0.78rem; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--faint);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.25rem);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 1.04;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+    .hero-sub {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: -0.01em;
+      max-width: 520px;
+      margin: 0 auto 38px;
+    }
+    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 980px;
+      letter-spacing: -0.01em;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-dark { background: var(--text); color: #fff; }
+    .btn-dark:hover { background: #3a3a3c; }
+    .btn-light { background: var(--off); color: var(--text); }
+    .btn-light:hover { background: var(--off2); }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+
+    /* ── ABOUT ── */
+    .about-section { background: var(--off); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: start; }
+    .about-label { font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: var(--faint); }
+    .about-head { font-size: 2.1rem; font-weight: 600; letter-spacing: -0.04em; margin-top: 16px; line-height: 1.12; }
+    .about-copy { color: var(--muted); font-size: 1.05rem; }
+    .about-copy + .about-copy { margin-top: 18px; }
+
+    /* ── EXPERIENCE ── */
+    .exp-section { background: var(--white); }
+    h2 { font-size: 2rem; font-weight: 600; letter-spacing: -0.04em; margin-bottom: 48px; }
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .tl-row {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 40px; padding: 32px 0;
+      border-top: 1px solid var(--line);
+    }
+    .tl-meta { font-size: 0.9rem; color: var(--faint); padding-top: 4px; }
+    .tl-meta strong { display: block; color: var(--text); font-weight: 500; font-size: 1rem; margin-bottom: 4px; letter-spacing: -0.02em; }
+    .tl-body h3 { font-size: 1.12rem; font-weight: 500; letter-spacing: -0.025em; margin-bottom: 12px; }
+    .tl-body ul { padding-left: 18px; color: var(--muted); font-size: 0.98rem; }
+    .tl-body li + li { margin-top: 8px; }
+
+    /* ── EDUCATION ── */
+    .edu-section { background: var(--off); }
+
+    /* ── CERTS ── */
+    .cert-section { background: var(--white); }
+    .cert-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+    .cert-pill {
+      padding: 12px 20px;
+      border: 1px solid var(--line);
+      border-radius: 980px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--white);
+      letter-spacing: -0.01em;
+    }
+
+    /* ── SKILLS ── */
+    .skills-section { background: var(--off); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .skill-card {
+      padding: 24px;
+      background: var(--white);
+      border-radius: 18px;
+      font-weight: 500;
+      font-size: 0.98rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .skill-card small { display: block; color: var(--faint); font-weight: 400; font-size: 0.86rem; margin-top: 4px; }
+
+    /* ── BLOG ── */
+    .blog-section { background: var(--white); }
+    .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .blog-card {
+      background: var(--off);
+      border-radius: 20px;
+      padding: 28px;
+    }
+    .blog-kicker { font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: var(--faint); margin-bottom: 14px; }
+    .blog-card h3 { font-size: 1.22rem; font-weight: 600; letter-spacing: -0.03em; margin-bottom: 10px; line-height: 1.28; }
+    .blog-card p { color: var(--muted); font-size: 0.96rem; }
+    .blog-link { display: inline-block; margin-top: 20px; font-size: 0.92rem; font-weight: 500; color: #0071e3; letter-spacing: -0.01em; }
+
+    /* ── CONTACT ── */
+    .contact-section { background: var(--off); text-align: center; }
+    .contact-section h2 { margin-bottom: 16px; }
+    .contact-section p { color: var(--muted); max-width: 44ch; margin: 0 auto 36px; }
+    .contact-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+    .contact-links a { color: #0071e3; font-size: 0.96rem; font-weight: 500; text-decoration: none; }
+    .contact-links a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 22px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--faint);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 740px) {
+      .about-grid, .blog-grid, .skills-grid { grid-template-columns: 1fr; }
+      .tl-row { grid-template-columns: 1fr; gap: 10px; }
+      h1 { font-size: 2.6rem; }
+    }
+    @media (max-width: 520px) {
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-name">Ayodele Olabanji</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://github.com/AyoSecLabs" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-label">Cybersecurity Engineer</span>
+      <h1>Ayodele<br>Olabanji.</h1>
+      <p class="hero-sub">Securing digital assets. Building resilient systems. Documenting the journey.</p>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="mailto:your.email@example.com">Get in touch</a>
+        <a class="btn btn-light" href="#blog">Read my blog</a>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="inner">
+      <div class="about-grid">
+        <div>
+          <div class="about-label">About</div>
+          <div class="about-head">Security-first thinking in every layer.</div>
+        </div>
+        <div>
+          <p class="about-copy">Cybersecurity professional with expertise in information security, cloud security, and network protection. Passionate about securing digital assets and mitigating cyber threats in complex environments.</p>
+          <p class="about-copy">Holder of an MSc in Cloud and Network Security and multiple industry-recognised certifications. Learning in public and building toward a stronger, more resilient career.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- EXPERIENCE -->
+  <section class="exp-section" id="experience">
+    <div class="inner">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-meta">
+            <strong>Job Title</strong>
+            Company Name<br>Month Year – Present<br>Location
+          </div>
+          <div class="tl-body">
+            <ul>
+              <li>Key responsibility or measurable achievement written with clarity.</li>
+              <li>Another important contribution that demonstrates security impact.</li>
+              <li>A third point that shows depth, initiative, or technical range.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- EDUCATION -->
+  <section class="edu-section" id="education">
+    <div class="inner">
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-meta">
+            <strong>MSc Cloud &amp; Network Security</strong>
+            Institution Name<br>Graduation Year
+          </div>
+          <div class="tl-body">
+            <p style="color:var(--muted); font-size:0.98rem;">Specialist postgraduate degree covering cloud architecture security, network threat modelling, and secure system design at an advanced level.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- CERTIFICATIONS -->
+  <section class="cert-section" id="certifications">
+    <div class="inner">
+      <h2>Certifications</h2>
+      <div class="cert-grid">
+        <span class="cert-pill">CISM</span>
+        <span class="cert-pill">Security+</span>
+        <span class="cert-pill">SC-200</span>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- SKILLS -->
+  <section class="skills-section" id="skills">
+    <div class="inner">
+      <h2>Core skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">Cybersecurity<small>Threat detection &amp; mitigation</small></div>
+        <div class="skill-card">Information Security<small>Policy, governance, compliance</small></div>
+        <div class="skill-card">Cloud Security<small>Azure, AWS architecture security</small></div>
+        <div class="skill-card">Network Security<small>Firewall, IDS/IPS, segmentation</small></div>
+        <div class="skill-card">Threat Detection<small>SIEM, monitoring, incident response</small></div>
+        <div class="skill-card">Risk Management<small>Assessment, treatment, reporting</small></div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- BLOG -->
+  <section class="blog-section" id="blog">
+    <div class="inner">
+      <h2>Blog</h2>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-kicker">Journey entry</div>
+          <h3>What I am learning in cloud and network security</h3>
+          <p>A place for lessons from labs, projects, and certification study—written clearly for anyone following a similar path.</p>
+          <span class="blog-link">Read more →</span>
+        </article>
+        <article class="blog-card">
+          <div class="blog-kicker">Field notes</div>
+          <h3>Milestones, reflections, and technical breakdowns</h3>
+          <p>Documenting the journey openly so recruiters, peers, and future collaborators can see how I think and grow.</p>
+          <span class="blog-link">Read more →</span>
+        </article>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="inner">
+      <h2>Let's connect.</h2>
+      <p>Open to opportunities, collaborations, and conversations about security.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/olabanji-ayodele-b908b790" target="_blank">LinkedIn</a>
+        <a href="https://github.com/AyoSecLabs" target="_blank">GitHub</a>
+        <a href="mailto:your.email@example.com">your.email@example.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Ayodele Olabanji. All rights reserved. &nbsp;·&nbsp; <a href="https://github.com/AyoSecLabs" target="_blank" style="color:var(--faint);text-decoration:none;">github.com/AyoSecLabs</a></p>
+  </footer>
+
+</body>
+</html>
